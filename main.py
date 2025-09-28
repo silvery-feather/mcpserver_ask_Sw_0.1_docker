@@ -23,7 +23,7 @@ except Exception as e:
     raise RuntimeError("faiss-cpu not installed. Install via: uv add faiss-cpu") from e
 
 try:
-    from mcp.server.fastmcp import FastMCP
+    from fastmcp import FastMCP
 except Exception as e:
     raise RuntimeError("mcp not installed. Install via: uv add mcp") from e
 
@@ -565,5 +565,14 @@ if __name__ == "__main__":
                 max_bytes=args.max_bytes,
             ))
 
-    # 运行 MCP（stdio）
-    mcp.run(transport="sse", host="0.0.0.0", port=int(os.getenv("PORT", "8765")))
+    # ====== 最后启动处（SSE）======
+    PORT = int(os.getenv("PORT", "8765"))
+
+    try:
+        # 新版 fastmcp：run() 可接 host/port
+        mcp.run(transport="sse", host="0.0.0.0", port=PORT)
+    except TypeError:
+        # 旧实现：需要在构造时传 host/port
+        from fastmcp import FastMCP  # 确保用 fastmcp 的 FastMCP
+        mcp = FastMCP("SwanLabDocsRAG", transport="sse", host="0.0.0.0", port=PORT)
+        mcp.run()
