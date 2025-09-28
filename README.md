@@ -1,4 +1,4 @@
-##如果你想要在cursor与trae中配置这个mcpserver
+# 如果你想要在cursor与trae中配置这个mcpserver
 
 ## macOS / Linux
 
@@ -39,3 +39,4 @@ docker compose up -d --build
 }
 ```
 5.如果你想要配置到trae中，逻辑同上，json示例为通用格式，直接复制粘贴即可。
+
