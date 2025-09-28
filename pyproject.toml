@@ -1,0 +1,16 @@
+[project]
+name = "mcpserver"
+version = "0.1.0"
+description = "SwanLab Docs RAG (Retriever-only) MCP Server"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+
+dependencies = [
+  "faiss-cpu>=1.8.0,<1.9.0",
+  "fastmcp>=2.12.3,<3.0.0",
+  "mcp[cli]>=1.14.0,<2.0.0",
+  "numpy>=1.26,<2.0",
+  "openai>=1.40.0",
+  "regex>=2024.5.15",
+  "tqdm>=4.66",
+]
