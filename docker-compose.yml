@@ -1,0 +1,15 @@
+services:
+  mcp:
+    build: .
+    image: swanlab-rag:latest
+    environment:
+      # 从外部传入，不写死在文件里
+      - DASHSCOPE_API_KEY=${DASHSCOPE_API_KEY}
+      - PORT=8765
+    ports:
+      - "8765:8765"
+    volumes:
+      # 可选：让宿主能看到/更新文档与索引（你已有 rag_cache，也可以不挂）
+      - ./md:/app/md
+      - ./rag_cache:/app/rag_cache
+    restart: unless-stopped

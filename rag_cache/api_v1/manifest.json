@@ -1,0 +1,10 @@
+{
+  "created_at": 1758026012,
+  "count": 152,
+  "dim": 1536,
+  "embed_model": "text-embedding-v2",
+  "chat_model": "qwen-plus",
+  "chunk_size": 900,
+  "chunk_overlap": 120,
+  "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1"
+}
