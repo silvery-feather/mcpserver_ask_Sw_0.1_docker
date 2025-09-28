@@ -3,9 +3,11 @@
 ## macOS / Linux
 
 ```bash
+# 下载工程并进入文件夹  
 git clone https://github.com/silvery-feather/mcpserver_ask_Sw_0.1_docker  
 cd mcpserver_ask_Sw_0.1_docker  
 
+# 设置key并启动docker  
 export DASHSCOPE_API_KEY="你的Key"  
 docker compose up -d --build  
 ```
@@ -13,9 +15,12 @@ docker compose up -d --build
 ## Windows PowerShell
 
 ```bash
+# 下载工程并进入文件夹  
 git clone https://github.com/silvery-feather/mcpserver_ask_Sw_0.1_docker  
 cd mcpserver_ask_Sw_0.1_docker  
 
+
+# 设置key并启动docker  
 $env:DASHSCOPE_API_KEY="替换为你的Key"  
 docker compose up -d --build  
 
@@ -39,4 +44,5 @@ docker compose up -d --build
 }
 ```
 5.如果你想要配置到trae中，逻辑同上，json示例为通用格式，直接复制粘贴即可。
+
 
